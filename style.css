@@ -1,0 +1,501 @@
+/*
+  Theme Name: Robel
+  Theme URI: http://www.robel.com.br/
+  Description: Robel Móveis
+  Author: Maya Comunicação
+  Author uri: http://mayacomunicacao.com.br
+  License: GPL
+  Version: 1.0
+  Domain Path: /languages
+*/
+
+@charset "UTF-8";
+
+html{
+  scroll-behavior: smooth;
+}
+section{
+  display: block;
+}
+section.about{
+  overflow: initial;
+}
+.up-top{
+  position: absolute;
+  right: 0;
+  border: 1px solid;
+  border-color: #979797;
+  padding: 3px 5px;
+  border-radius: 50%;
+}
+footer .footer-dir {
+  position: relative;
+}
+.block-1 .img_next{
+  cursor: pointer;
+}
+.contacts {
+  z-index: 1;
+  overflow-x: hidden;
+}
+.products .adjust-left .tx .info .ico-first{
+  transform: rotate(90deg);
+}
+.products .dif{
+  margin-top: 5px
+}
+.products .dif p{
+  line-height: 2;
+}
+.products .colors img,
+.products .colors span{
+  display: inline-block;
+}
+.products .colors img{
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+.products .adjust-left .tx ul li {
+    padding: 5px 0;
+}
+.products .adjust-left .tx ul li img{
+    border: 1px solid;
+    border-color: #E1E1E1;
+}
+.products .bg {
+    background-color: #f4f4f4;
+    margin-bottom: 60px;
+}
+.modulados .wrap .bts a:last-child {
+    margin-left: 35px;
+}
+.cor-mod{
+  margin: 20px 0;
+}
+.cor-mod b{
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+}
+.cor-mod span:not(:last-child){
+  margin-right: 10px;
+}
+.banner-home .item .cont p{
+  color: white;
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+:root {
+    --wBox: 320px;
+    --hBox: 420px;
+    --gridGap: 25px;
+}
+#mods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--wBox), var(--wBox)));
+    grid-gap: var(--gridGap);
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    width: 100%;
+    height: fit-content;
+    margin: auto;
+    padding: 8px;
+    background-color: #fff;
+}
+#mods .opacidade_fundo {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 1);
+    opacity: 0;
+    transition: all 2s ease-in-out;
+}
+#mods .opacidade_active {
+    transition: all 0.4s;
+    opacity: 0.8;
+}
+#mods .mod-item {
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: var(--wBox);
+    height: var(--hBox);
+    transition: all 0.2s;
+    background-color: #f4f4f4;
+    padding: 0;
+}
+#mods .open-modal {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: auto;
+    left: calc(var(--wBox) - 18px);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    opacity: 1;
+    transition: all 0.2s;
+    z-index: 91;
+}
+#mods .button_active {
+    z-index: 99;
+}
+#mods .button_active_right {
+    z-index: 99;
+    left: calc(0px - var(--wBox) * 2.31 + var(--gridGap) + 6px);
+}
+#mods .button_active_left {
+    left: calc(var(--wBox) * 3 + var(--gridGap) + 6px);
+    transform: rotate(-180deg);
+}
+#mods .button_active_single {
+    opacity: 0;
+}
+#mods .button_close_content_single {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 5px;
+    right: 5px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: white;
+    background-color: rgb(175, 175, 175);
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.2s;
+    z-index: 1;
+    visibility: hidden;
+}
+#mods .button_close_content_single_active {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.7s;
+}
+#mods .galeria{
+    width: var(--wBox);
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+#mods .gallery-center {
+    display: block;
+    margin: 0 auto;
+}
+#mods .carousel-content {
+    display: block;
+    margin: 0 auto;
+}
+#mods .imagens-modulos {
+    display: block;
+    width: var(--wBox);
+    height: var(--hBox);
+}
+#mods .content {
+    display: flex;
+    visibility: hidden;
+    position: absolute;
+    justify-content: end;
+    align-items: center;
+    width: 0;
+    height: 100%;
+    top: 0;
+    opacity: 0;
+    z-index: -1;
+    background-color: #ededed;
+    transition: all 0.2s;
+}
+#mods .left {
+    left: var(--wBox);
+}
+#mods .center_modulo {
+    left: 0;
+}
+#mods .right {
+    right: var(--wBox);
+}
+#mods .bottom {
+    left: 0;
+    top: var(--hBox);
+    width: calc(var(--wBox) * 2 + var(--gridGap));
+    height: 0;
+}
+#mods .visible_bottom {
+    height: calc(100% + var(--gridGap)) !important;
+    visibility: visible;
+    transition-delay: 0.6s;
+    opacity: 1;
+}
+#mods .visible_left {
+    opacity: 1;
+    visibility: visible;
+    width: calc(var(--wBox) * 2 + (var(--gridGap) * 2));
+}
+#mods .visible_right {
+    opacity: 1;
+    visibility: visible;
+    width: calc(var(--wBox) * 2 + (var(--gridGap) * 2));
+}
+#mods .full {
+    left: 0;
+    transition-delay: 0.4s;
+}
+#mods .visible_full {
+    width: calc(var(--wBox) * 2 + var(--gridGap));
+}
+#mods .bottom_single {
+    left: 0;
+    top: var(--hBox);
+    width: var(--wBox);
+    height: 0;
+}
+#mods .visible_bottom_single {
+    height: calc(100% + var(--gridGap)) !important;
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0.2s;
+}
+#mods .owl-dots {
+    position: relative;
+    top: -35px;
+}
+.block-1 ul li:first-child a{
+  color: #a42026;
+}
+.politica{
+  padding: 0 0 60px 0;
+  text-align: left;
+}
+.politica h1{
+  display: block;
+  background-color: #a42026;
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+  margin: 0 auto 15px auto;
+}
+.bt-modAll{
+  padding: 0 0 60px 0;
+  background-color: white;
+  display: block;
+  text-align: center;
+}
+.bt-modAll p{
+  color: #6d6e71;
+}
+.bt-modAll a{
+  color: #6d6e71;
+  padding: 12px 15px;
+  border: 2px solid;
+  border-color: #6d6e71;
+  font-size: 1.3rem;
+  font-weight: 700;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.container_img {
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.container_img.off {
+  opacity: 0.8;
+}
+.container_img.visible {
+  opacity: 1;
+}
+.mod-item .owl-carousel.owl-drag .owl-item {
+    height: 100%px;
+    overflow: hidden;
+}
+.parallax{
+  transition: all 0.3s ease;
+}
+#dots_mob{
+  display: none;
+  margin-top: 10px;
+  width: 100%;
+}
+#dots_mob .progress{
+  text-align: left;
+  height: 7px;
+  width: 80%;
+  border: 1px solid;
+  border-color: rgb(175, 175, 175);
+  display: inline-block;
+}
+#dots_mob .progress p{
+  height: 100%;
+  width: 0;
+  background: #777;
+  transition: all .4s ease-out;
+}
+#dots_mob span{
+  text-align: right;
+  color: #777;
+  display: inline-block;
+  width: calc(20% - 4px);
+}
+#msg{
+  color: red;
+  text-align: center;
+  display: inline-block;
+  margin: 10px auto;
+}
+.work .wrap p{
+  margin-bottom: 60px;
+  display: inline-block;
+}
+.products .wrap {
+    padding: 0 60px 0;
+}
+.modulados .cores{
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+.modulados .cores ul{
+  margin-top: 30px;
+}
+.modulados .cores ul li{
+  display: inline-block;
+  width: 20%;
+  text-align: left;
+  padding: 10px 15px;
+}
+.modulados .cores img{
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  margin-right: 7px;
+  border: 1px solid;
+  border-color: #e1e1e1;
+}
+.modulados .cores span{
+  display: inline-block;
+}
+#mods .color li{
+  width: 30%;
+  text-align: left;
+  padding: 5px 15px;
+}
+#mods .color li img{
+  margin-bottom: 5px;
+}
+
+@media (min-width: 1200px){
+  .products .adjust-left {
+      padding: 40px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .modulados .cores img{
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .modulados .cores ul li{
+    width: 33.33333%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #mods .open-modal {
+      display: flex;
+      position: absolute;
+      justify-content: center;
+      align-items: center;
+      top: auto;
+      left: calc(50% - 17px);
+      bottom: -15px;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      color: white;
+      cursor: pointer;
+      opacity: 1;
+      transition: all 0.2s;
+      z-index: 999;
+      transform: rotate(90deg);
+  }
+  #mods .content .wrap{
+    padding: 40px 0;
+  }
+  #mods .button_active {
+      z-index: 99;
+      transform: rotate(270deg);
+  }
+  .block-2 {
+    margin-bottom: 40px;
+  }
+  #dots_mob{
+    display: block;
+  }
+  .modulados .cores{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  .modulados .cores img{
+    width: 50px;
+    height: 50px;
+  }
+  .modulos .mod-item .content .info .tec {
+    margin-top: 30px;
+  }
+}
+@media screen and (max-width: 576px){
+  .block-1 .cat-3,
+  .block-1 .cat-1 {
+    display: none;
+  }
+  .block-1 .cat-2 {
+      width: 100%;
+  }
+  .modulos .mod-item .content .info {
+    padding: 20px;
+  }
+  .modulos .mod-item .content .info .m_bts button {
+    padding: 15px 10px;
+  }
+  .modulos .mod-item .content .info .m_bts a {
+    margin-top: 15px;
+  }
+  #header .container ul li a,
+  #header.ex_top.active ul li a {
+    font-size: 1.4rem;
+    padding: 20px 0px;
+  }
+  .modulados .wrap .bts a:last-child {
+    margin-left: 10px;
+    display: inline-block;
+    margin-top: 27px;
+  }
+  .modulados .cores ul li{
+    width: 100%;
+    margin: 0;
+    padding: 5px 15px;
+  }
+  .modulados .cores img{
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+  }
+}
