@@ -1,0 +1,101 @@
+.about{
+  background-color: $bg-color;
+
+  .adjust-left{
+    color: $color-base;
+    padding: 50px;
+    position: relative;
+
+    @include md{
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      display: block;
+      height: 100%;
+    }
+
+    @include xl{
+      padding: 70px 70px 70px 70px;
+    }
+
+    @include rwd(1440){
+      padding: 100px 100px 100px 0;
+    }
+
+    &::-webkit-scrollbar{
+      display: none;
+    }
+
+    h1, h2, h3, h4, h5, h6{
+      color: $color-base;
+    }
+    a{
+      text-decoration: underline;
+      color: $color-base;
+
+      &:hover{
+        color: $color-main;
+      }
+    }
+  }
+
+  .adjust-right{
+    background-image: url('../img/textura-2.jpg');
+    background-repeat: repeat;
+    background-size: auto;
+    padding: 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    display: block;
+    height: 100%;
+
+    .wrap{
+      display: block;
+
+      @include sm{
+        display: flex;
+      }
+
+      @include md{
+        display: block;
+        position: relative;
+      }
+
+      .img{
+        width: 100%;
+        padding: 50px 50px 0 50px;
+
+        @include sm{
+          width: 33.3333%;
+          padding: 30px;
+        }
+
+        @include md{
+          width: 100%;
+          padding: 70px 70px 0 70px;
+        }
+
+        @include xl{
+          padding: 100px 100px 0 100px;
+        }
+
+        @include rwd(1440){
+          padding: 100px 0 0 100px;
+        }
+
+        &:last-child{
+          padding-bottom: 50px;
+
+          @include sm{
+            padding-bottom: 30px;
+          }
+
+          @include md{
+            padding-bottom: 100px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,274 @@
+.contacts{
+  height: 100%;
+  z-index: -1;
+  position: relative;
+
+  @include md{
+    height: 700px;
+  }
+
+  @include rwd(1445){
+    height: 820px;
+  }
+
+  h2{
+    @include font-title-content;
+  }
+
+  .adjust-left{
+    background-color: $bg-color-two;
+    padding: 15px;
+    height: 100%;
+
+    @include sm{
+      padding: 40px;
+    }
+
+    @include xl{
+      padding: 60px;
+    }
+
+    @include rwd(1650){
+      padding: 100px 100px 100px 0;
+    }
+
+    .rm_bg-two{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    h2{
+      color: $color-base;
+    }
+
+    ul{
+      margin-top: 30px;
+
+      li{
+        margin: 15px 0;
+        padding: 10px 15px;
+        @include max-content;
+        display: block;
+        cursor: pointer;
+
+        a{
+          color: $color-main;
+          @include font-subtitle;
+          font-weight: 700;
+        }
+
+        &:hover{
+          background: $color-main;
+          color: white;
+          border-radius: 7px;
+
+          a{
+            color: white;
+          }
+        }
+      }
+
+      li.active{
+        background: $color-main;
+        color: white;
+        border-radius: 7px;
+
+        a{
+          color: white;
+        }
+      }
+    }
+  }
+
+  .adjust-right{
+    background-color: $bg-color;
+    padding: 30px;
+    position: relative;
+    height: 630px;
+
+    @include sm{
+      padding: 45px;
+      height: 100%;
+    }
+
+    @include xl{
+      padding: 60px;
+    }
+
+    @include rwd(1650){
+      padding: 100px 100px 100px 0;
+    }
+
+    .rm_bg{
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: auto;
+      z-index: -1;
+    }
+
+    /*
+    .wpcf7-form{
+      margin-top: 30px;
+
+      div{
+        margin: 20px 0;
+      }
+
+      input,
+      textarea{
+        padding: 15px;
+        height: 55px;
+        border: 1px solid;
+        border-color: #e2e3e4;
+        background: transparent;
+        display: block;
+      }
+
+      textarea{
+        height: 120px;
+      }
+
+      .wpcf7-list-item input{
+        height: auto;
+        display: inline-block;
+      }
+      .tx{
+        display: inline-table;
+        width: 90%;
+        color: $color-base;
+
+        a{
+          color: $color-base;
+          text-decoration: underline;
+        }
+      }
+    }
+    */
+
+    .element{
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      right: 15px;
+      @include translate(100%, 0);
+      visibility: hidden;
+      opacity: 0;
+      transition-duration: .7s;
+      overflow: auto;
+      height: auto;
+
+      @include sm{
+        top: 40px;
+        left: 40px;
+        right: 40px;
+      }
+
+      @include md{
+        top: 40px;
+        left: 40px;
+        right: 40px;
+      }
+
+      @include xl{
+        top: 100px;
+        left: 100px;
+        right: 100px;
+      }
+
+      &::-webkit-scrollbar{
+        display: none;
+      }
+
+      .wrap{
+        padding: 15px 0 50px 0;
+
+        .accordion-list {
+          position: relative;
+          display: block;
+          width: 100%;
+          height: auto;
+          margin: 0;
+          list-style: none;
+
+          li {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: auto;
+            background-color: #fff;
+            padding: 20px;
+            margin: 0 auto 15px auto;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            cursor: pointer;
+
+            h3 {
+              font-weight: 700;
+              position: relative;
+              display: block;
+              width: 100%;
+              height: auto;
+              padding: 0 0 0 0;
+              margin: 0;
+              font-size: 1.1rem;
+              color: $color-base;
+              cursor: pointer;
+              text-transform: uppercase;
+
+              &:after {
+                content: "+";
+                position: absolute;
+                right: 0;
+                top: 0;
+                color: $color-base;
+                transition: all .3s ease-in-out;
+                font-size: 1.5rem
+              }
+              @include sm{
+                font-size: 1.5rem;
+              }
+            }
+
+            div.answer {
+              position: relative;
+              display: block;
+              width: 100%;
+              height: auto;
+              margin: 15px 0 0 0;
+              padding: 0;
+              cursor: pointer;
+
+              p {
+                position: relative;
+                display: inline-block;
+                padding: 10px 0 0 0;
+                cursor: pointer;
+                margin: 0 0 5px 0;
+                color: #58595b;
+                width: 100%;
+              }
+            }
+          }
+          li.active h3:after {
+            content: "-"
+          }
+        }
+
+        p{
+          margin: 30px 0;
+        }
+      }
+    }
+    .element.active{
+      @include translate(0, 0);
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

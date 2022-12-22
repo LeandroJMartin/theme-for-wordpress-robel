@@ -1,0 +1,160 @@
+#header{
+
+  .container{
+
+    @include xl{
+      width: calc(100% - 60px);
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+
+    @include rwd(1650){
+      width: 1650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    ul{
+      margin-bottom: 0;
+
+      li{
+        position: relative;
+        cursor: pointer;
+
+        a{
+          color: $color-base;
+          padding: 10px 15px;
+          display: block;
+          text-transform: uppercase;
+
+          &::after{
+            content: '';
+            width: 10%;
+            height: 1px;
+            background-color: $color-base;
+            display: block;
+            margin-top: 5px;
+            transition: all .3s ease-out;
+            visibility: hidden;
+            opacity: 0;
+          }
+
+          @include xl{
+            display: inline-block;
+          }
+        }
+
+        &:hover > a{
+
+          &::after{
+            content: '';
+            width: 60%;
+            visibility: visible;
+            opacity: .9;
+          }
+        }
+
+        .sub-menu{
+          position: relative;
+          padding-top: 0;
+          padding-bottom: 0;
+          padding-left: 15px;
+          transition: all .3s ease-out;
+          visibility: hidden;
+          opacity: 0;
+          @include translate(0, -30%);
+          height: 1px;
+          z-index: 9999;
+
+          li{
+            height: 35px;
+            background: transparent;
+
+            a{
+              font-weight: 400;
+              display: block;
+              @include max-content;
+            }
+          }
+
+          @include xl{
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding-top: 40px;
+            padding-bottom: 0;
+            padding-left: 0;
+            height: 60px;
+
+            li{
+              height: 35px;
+              background: white;
+            }
+          }
+        }
+
+        .sub-menu.active{
+          visibility: visible;
+          opacity: 1;
+          @include translate(0, 0);
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+#header.ex_top{
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+
+  ul{
+    margin-bottom: 0;
+
+    li{
+      position: relative;
+
+      a{
+        color: white;
+        font-weight: 700;
+
+        &::after{
+          background-color: $color-base;
+
+          @include xl{
+            background-color: white;
+          }
+        }
+      }
+
+      .sub-menu{
+
+        li{
+          background: transparent;
+
+          a{
+
+            &::after{
+              content: '';
+              background-color: white;
+            }
+          }
+        }
+      }
+
+      &:hover > a{
+
+        &::after{
+          content: '';
+          width: 60%;
+          visibility: visible;
+          opacity: .9;
+        }
+      }
+    }
+  }
+}

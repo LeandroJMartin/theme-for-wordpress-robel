@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+/*-- Responsive --*/
+@import "bleackpoints";
+
+/*-- Setting font tags and sizes --*/
+@import "fonts";
+
+/*-- base --*/
+@import "base";
+
+/*-- header --*/
+@import "header";
+@import "menu";
+
+/*-- pages --*/
+@import "banner-home";
+@import "home";
+@import "about";
+@import "products";
+@import "contacts";
+@import "page";
+@import "modulos";
+@import "ambientes";
+@import "modulados";
+@import "404";
+
+/*-- footer --*/
+@import "footer";

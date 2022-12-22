@@ -1,0 +1,188 @@
+/*-- defining to colors --*/
+$color-main: #a42026;
+$color-base: #6d6e71;
+$bg-color: #f4f4f4;
+$bg-color-two: #e6e7e8;
+$bg-color-black: #323235;
+
+
+.color-main{ color: $color-main; }
+.color-base{ color: $color-base; }
+
+.rm_bg{ background-color: $bg-color };
+.rm_bg-two{ background-color: $bg-color-two };
+.rm_bg-black{ background-color: $bg-color-black };
+
+h1, h2, h3, h4 ,h5, h6{
+  font-weight: 700;
+  color: $color-main;
+}
+
+p{
+  @include font-paragraph;
+}
+
+a{
+  cursor: pointer;
+}
+body{
+  position: relative;
+}
+
+@mixin transform($transforms) {
+	-webkit-transform: $transforms;
+	-moz-transform: $transforms;
+	-ms-transform: $transforms;
+	transform: $transforms;
+}
+
+// Rotate
+@mixin rotate ($deg) {
+	@include transform(rotate(#{$deg}deg));
+}
+
+// Scale
+@mixin scale($scale) {
+	@include transform(scale($scale));
+}
+
+// Translate
+@mixin translate ($x, $y) {
+	@include transform(translate($x, $y));
+}
+
+// Skew
+@mixin skew ($x, $y) {
+	@include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+// Transform Origin
+@mixin transform-origin ($origin) {
+    	-webkit-transform-origin: $origin;
+    	-moz-transform-origin: $origin;
+	-ms-transform-origin: $origin;
+	transform-origin: $origin;
+}
+
+@mixin max-content{
+  width: intrinsic;
+  width: -webkit-max-content;
+  width: -moz-fit-content;
+  width: -o-max-content;
+  width: max-content;
+}
+
+::-webkit-input-placeholder{ color: #ababad; }
+:-ms-input-placeholder{ color: #ababad; }
+::-ms-input-placeholder{ color: #ababad; }
+::placeholder{ color: #ababad; }
+::-moz-placeholder { color: #ababad; }
+:-moz-placeholder { color: #ababad; }
+
+
+.bt{
+  color: $color-main;
+  @include font-buttons;
+  font-weight: 700;
+  display: inline-block;
+  padding-bottom: 10px;
+  @include max-content;
+
+  &::after{
+    content: '';
+    width: 80%;
+    height: 2px;
+    background-color: $color-main;
+    display: block;
+    margin-top: 5px;
+  }
+}
+
+h1.title{
+  color: $color-main;
+  @include font-title;
+  margin-bottom: 15px;
+}
+.bt-sub{
+  position: relative;
+
+  input{
+    opacity: 0
+  }
+
+  input.wpcf7-submit{
+    height: 1px !important;
+    width: 1px !important;
+    padding: 0px !important;
+  }
+
+  label{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-color: $color-base;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: background .3s;
+
+    svg{
+      width: 12px;
+      height: auto;
+      margin: 10px 0 0 15px;
+    }
+
+    &:hover{
+      background-color: $color-main;
+    }
+  }
+
+  span.wpcf7-spinner{
+    display: block;
+  }
+}
+.wpcf7-form{
+  margin-top: 30px;
+
+  div{
+    margin: 20px 0;
+  }
+
+  input,
+  textarea{
+    padding: 15px;
+    height: 55px;
+    border: 1px solid;
+    border-color: #e2e3e4;
+    background: transparent;
+    display: block;
+  }
+
+  textarea{
+    height: 120px;
+  }
+
+  .wpcf7-list-item input{
+    height: auto;
+    display: inline-block;
+  }
+  .tx{
+    display: inline-table;
+    width: 87%;
+    color: $color-base;
+
+    a{
+      color: $color-base;
+      text-decoration: underline;
+    }
+  }
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    background: $bg-color-two;
+}
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+    background: $color-main;
+}

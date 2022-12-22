@@ -1,0 +1,231 @@
+.products{
+
+
+  .bg{
+    background-color: $bg-color;
+  }
+
+  .adjust-left{
+    background-color: $bg-color;
+    color: $color-base;
+    padding: 40px 15px;
+    height: auto;
+    width: 100%;
+    overflow: auto;
+
+    @include sm{
+      padding: 40px;
+    }
+
+    @include rwd(900){
+      width: 50%;
+    }
+
+    @include xl{
+      padding: 100px;
+    }
+
+    @include rwd(1650){
+      padding: 100px 100px 100px 0;
+    }
+
+    .tx{
+
+      p{
+        @include font-paragraph;
+      }
+
+      h3{
+        color: $color-base;
+      }
+
+      .info{
+        width: 100%;
+        margin: 20px 0;
+
+        p{
+          display: inline-block;
+        }
+        img{
+          width: 30px;
+          height: 30px;
+          display: inline-block;
+        }
+      }
+
+      ul{
+        margin: 20px 0;
+
+        h3{
+          color: $color-base;
+        }
+
+        li{
+          padding: 10px 0;
+          @include font-paragraph;
+        }
+      }
+
+      .butons{
+        margin-top: 20px;
+
+        a.bt{
+          @include font-bt-prod;
+
+          &:first-child{
+            margin-right: 60px;
+          }
+        }
+      }
+    }
+  }
+
+  .adjust-right{
+    background-image: url('../img/textura-2.jpg');
+    background-repeat: repeat;
+    background-size: auto;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    padding: 40px;
+
+    @include sm{
+      padding: 100px;
+    }
+
+    @include rwd(900){
+      width: 50%;
+    }
+
+    @include xl{
+      padding: 100px 0 100px 100px;
+    }
+
+    .img{
+
+      .item{
+        height: 250px;
+        overflow: hidden;
+
+        @include sm{
+          height: 450px;
+        }
+
+        @include md{
+          height: 500px;
+        }
+      }
+
+      .owl-theme .owl-nav.disabled+.owl-dots {
+          margin-top: 30px;
+      }
+
+      .owl-theme .owl-dots .owl-dot span,
+      .owl-theme .owl-dots .owl-dot span {
+        background: transparent;
+        border: 1px solid;
+        border-color: white;
+      }
+
+      .owl-theme .owl-dots .owl-dot.active span,
+      .owl-theme .owl-dots .owl-dot:hover span {
+          background: white;
+      }
+    }
+  }
+
+  .wrap{
+    padding: 60px 0;
+
+    .title{
+      text-align: center;
+      margin-bottom: 60px;
+
+      h1{
+        @include font-title;
+      }
+    }
+    .col-grid{
+      width: 100%;
+
+      @include sm{
+        width: 50%;
+      }
+
+      @include md{
+        width: 33.3333%;
+      }
+
+      @include xl{
+        width: 25%;
+      }
+
+      .wraper{
+        height: 300px;
+        width: 100%;
+        position: relative;
+
+        @include xl{
+          height: 230px;
+          width: 100%;
+        }
+
+        @include rwd(1650){
+          height: 370px;
+          width: 100%;
+        }
+
+        a{
+          color: white;
+
+          .content{
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0);
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition-duration: .37s;
+
+            .tx{
+              @include translate(0, 70%);
+              transition-duration: .45s;
+
+              h3{
+                font-size: 1.4rem;
+                color: white;
+
+                @include xl{
+                  font-size: 1.6rem;
+                }
+
+                @include rwd(1650){
+                  font-size: 2.4rem;
+                }
+              }
+              p.bt{
+                margin-top: 10px;
+                color: white;
+              }
+            }
+          }
+
+          &:hover{
+
+            .content{
+              opacity: 1;
+              visibility: visible;
+              background: rgba(0, 0, 0, .37);
+
+              .tx{
+                @include translate(0, 0);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

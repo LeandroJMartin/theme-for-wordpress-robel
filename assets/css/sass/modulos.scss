@@ -1,0 +1,198 @@
+.modulos{
+  padding: 60px 0;
+  text-align: center;
+
+  h1{
+    @include font-title;
+    display: block;
+    margin: 0 auto 60px auto;
+  }
+
+  .mod-item{
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    z-index: 1;
+
+    @include sm{
+      width: 50%;
+    }
+
+    @include md{
+      width: 33%;
+    }
+
+    @include rwd(1650){
+      width: 25%;
+    }
+
+    .gallery{
+      width: 100%;
+      position: relative;
+      z-index: 1;
+
+      .item{
+        height: auto;
+        max-height: 450px;
+        overflow: hidden;
+
+        img{
+          height: auto;
+          width: 100%;
+          display: block;
+          margin: 0 auto;
+          transition: all .25s ease-out;
+        }
+
+        &:hover{
+
+          img{
+            @include scale(1.07);
+          }
+        }
+      }
+
+      .owl-theme .owl-nav.disabled+.owl-dots {
+        margin-top: -20px;
+        position: relative;
+      }
+
+      .owl-theme .owl-dots .owl-dot span {
+        width: 8px;
+        height: 8px;
+        background: transparent;
+        border: 1px solid;
+        border-color: #777777
+      }
+
+      .owl-theme .owl-dots .owl-dot.active span,
+      .owl-theme .owl-dots .owl-dot:hover span {
+          background: #777777;
+      }
+    }
+
+    .open-modal{
+      position: absolute;
+      top: 50%;
+      right: -10px;
+      background-color: $color-main;
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      z-index: 9;
+      visibility: visible;
+      opacity: 1;
+      transition: all .3s ease-out;
+      @include translate(0, 0);
+
+      svg{
+        width: 17px;
+        height: 17px;
+      }
+    }
+
+    .open-modal.hide{
+      visibility: hidden;
+      opacity: 0;
+      transition: all .3s ease-out;
+      @include translate(-30%, 0);
+    }
+
+    .content{
+      width: 700px;
+      position: absolute;
+      top: 0;
+      z-index: 0;
+      height: 100%;
+      padding: 10px 0;
+      visibility: hidden;
+      opacity: 0;
+      transition: all .3s ease-out;
+      @include translate(-30%, 0);
+
+      .info{
+        padding: 50px;
+        text-align: left;
+        height: 100%;
+        background-color: #ededed;
+
+        .descr{
+
+          p{
+            font-size: 1.05rem;
+          }
+        }
+
+        .m_bts{
+          text-align: left;
+
+          button{
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 15px 15px 0 0;
+          }
+
+          button.active{
+            background-color: $color-main;
+            color: white;
+          }
+
+          a{
+            display: inline-block;
+            padding: 10px 25px;
+            color: $color-main;
+            border: 2px solid;
+            border-color:  $color-main;
+            font-weight: 700;
+
+            &:first-child{
+              margin-right: 25px;
+            }
+          }
+        }
+
+        .tec{
+          width: 100%;
+
+          p{
+            display: inline-block;
+          }
+
+          img{
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+          }
+        }
+      }
+      
+      .wrap{
+        position: relative;
+        height: 100%;
+
+        .close-modal{
+          position: absolute;
+          top: 50%;
+          right: -10px;
+          background-color: $color-main;
+          width: 30px;
+          height: 30px;
+          border-radius: 100%;
+
+          svg{
+            width: 17px;
+            height: 17px;
+            @include rotate(180);
+            margin-right: 4px;
+          }
+        }
+      }
+    }
+
+    .content.active{
+      visibility: visible;
+      opacity: 1;
+      @include translate(0, 0);
+    }
+  }
+}

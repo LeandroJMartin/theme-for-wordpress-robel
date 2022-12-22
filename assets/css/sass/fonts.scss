@@ -1,0 +1,103 @@
+@mixin font-title {
+
+  font-size: 2rem;
+
+  @include sm {
+    font-size: 3rem;
+  }
+
+  @include xl {
+    font-size: 4rem;
+  }
+}
+
+@mixin font-title-content {
+
+  font-size: 2rem;
+
+  @include sm {
+    font-size: 2.6rem;
+  }
+
+  @include lg {
+    font-size: 3rem;
+  }
+}
+
+@mixin font-subtitle {
+
+  font-size: 1.4rem;
+
+  @include sm {
+    font-size: 1.6rem;
+  }
+
+  @include lg {
+    font-size: 2rem;
+  }
+}
+
+@mixin font-paragraph {
+
+  font-size: 1rem;
+
+  @include sm {
+    font-size: 1.15rem;
+  }
+
+  @include rwd(1440) {
+    font-size: 1.3rem;
+  }
+}
+
+@mixin font-buttons {
+
+  font-size: 1rem;
+
+  @include sm {
+    font-size: 1.1rem;
+  }
+
+  @include lg {
+    font-size: 1.2rem;
+  }
+}
+
+@mixin font-list {
+
+  font-size: 1.2rem;
+
+  @include sm {
+    font-size: 1.4rem;
+  }
+
+  @include lg {
+    font-size: 1.7rem;
+  }
+}
+
+@mixin font-banner {
+
+  font-size: 1.6rem;
+
+  @include sm {
+    font-size: 2.2rem;
+  }
+
+  @include xl {
+    font-size: 4.2rem;
+  }
+}
+
+@mixin font-bt-prod {
+
+  font-size: 1.2rem;
+
+  @include sm {
+    font-size: 1.4rem;
+  }
+
+  @include xl {
+    font-size: 1.6rem;
+  }
+}
